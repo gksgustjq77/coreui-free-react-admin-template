@@ -28,6 +28,8 @@ export const useDeviceKey = <T>(DeviceQueryParam: DeviceQueryParamType) => {
         },
       )) as Array<T>
     },
+    refetchInterval: 60000,
+    refetchIntervalInBackground: true,
   })
 }
 
@@ -56,5 +58,7 @@ export const useDeviceValue = <T>(DeviceQueryParam: DeviceQueryParamType) => {
         },
       )
     },
+    refetchInterval: 60000,
+    refetchIntervalInBackground: true,
   })
 }
