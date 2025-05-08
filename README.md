@@ -13,6 +13,7 @@
   - CChartBar를 통해 데이터 시각화
 
 - **전구 제어 대시보드**
+
   - 슬라이더(Bar)로 밝기 조절 UI
   - 값 변경 시 `/api/plugins/telemetry/DEVICE/{deviceId}/SERVER_SCOPE` API를 통해 데이터 패칭
   - 전구 SVG 내부에 <circle>을 통해 밝기 구현
@@ -29,6 +30,7 @@
   - Jotai
 
 - **기타**
+
   - Axios
 
 ## 설치 및 실행
