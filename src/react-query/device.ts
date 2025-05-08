@@ -20,12 +20,7 @@ export const useDeviceKey = <T>(DeviceQueryParam: DeviceQueryParamType) => {
     ],
     queryFn: async () => {
       return (await axiosInstance.get(
-        `http://hejdev1.goqual.com:8080/api/plugins/telemetry/DEVICE/${DeviceQueryParam.keys}/keys/timeseries`,
-        {
-          params: {
-            keys: DeviceQueryParam.keys,
-          },
-        },
+        `/api/plugins/telemetry/DEVICE/${DeviceQueryParam.keys}/keys/timeseries`,
       )) as Array<T>
     },
     refetchInterval: 60000,
@@ -46,7 +41,7 @@ export const useDeviceValue = <T>(DeviceQueryParam: DeviceQueryParamType) => {
     ],
     queryFn: async () => {
       return await axiosInstance.get(
-        `http://hejdev1.goqual.com:8080/api/plugins/telemetry/DEVICE/${DeviceQueryParam.keys}/values/timeseries`,
+        `/api/plugins/telemetry/DEVICE/${DeviceQueryParam.keys}/values/timeseries`,
         {
           params: {
             keys: DeviceSampleList.join(','),

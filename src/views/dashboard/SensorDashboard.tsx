@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import CustomCard from 'src/components/card/CustomCard'
 import BarChart from 'src/components/chart/BarChart'
+import LightBulb from 'src/views/dashboard/LightBulbDashboard'
 import { useDeviceKey, useDeviceValue } from 'src/react-query/device'
 import {
   ConverterDivceType,
@@ -11,7 +12,7 @@ import {
   iconMap,
 } from 'src/type/device/DeviceType'
 
-const SampleDashboard: React.FC = () => {
+const SensorDashboard: React.FC = () => {
   const [propsData, setPropsData] = useState<ConverterDivceType[]>([])
   const [groupedDeviceStatus, setGroupedDeviceStatus] = useState<DeviceValueType>({})
   const [dataStatus, setDataStatus] = useState<string>('AVG')
@@ -83,4 +84,4 @@ const SampleDashboard: React.FC = () => {
   )
 }
 
-export default SampleDashboard
+export default SensorDashboard

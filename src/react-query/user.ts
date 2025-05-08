@@ -7,7 +7,7 @@ import { useAtom } from 'jotai'
 
 export const useLogin = () => {
   const navigate = useNavigate()
-  const [alert, setAlert] = useAtom(notificationAtom)
+  const [_, setAlert] = useAtom(notificationAtom)
 
   return useMutation({
     mutationFn: async ({ username, password }: LoginType) => {
