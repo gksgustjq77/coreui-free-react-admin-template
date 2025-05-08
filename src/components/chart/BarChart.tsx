@@ -26,7 +26,7 @@ const BarChart: React.FC<CardProps> = ({ props, handleDataStatus, inputStatus })
   return (
     <>
       <CCol xs={12}>
-        <CCard className="d-flex">
+        <CCard className="d-flex mb-5">
           <CCardHeader className="d-flex justify-content-between align-items-center">
             Sensor Chart {currentDay?.yearMonthDay}
             <div>

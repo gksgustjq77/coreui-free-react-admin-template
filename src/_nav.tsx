@@ -29,8 +29,18 @@ const _nav = [
   },
   {
     component: CNavItem,
-    name: 'Sample Dashboard',
-    to: '/sample-dashboard',
+    name: 'Sensor Dashboard',
+    to: '/sensor-dashboard',
+    icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
+    badge: {
+      color: 'info',
+      text: 'NEW',
+    },
+  },
+  {
+    component: CNavItem,
+    name: 'LightBulb Dashboard',
+    to: '/lightbulb-dashboard',
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
     badge: {
       color: 'info',
