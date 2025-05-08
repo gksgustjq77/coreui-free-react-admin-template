@@ -5,13 +5,13 @@ import axiosInstance from 'src/service/axiosInstance'
 import { notificationAtom } from 'src/atoms/notificationAtom'
 import { useAtom } from 'jotai'
 
-export const useLogin = () => {
+export const useLogin = <T>() => {
   const navigate = useNavigate()
   const [_, setAlert] = useAtom(notificationAtom)
 
-  return useMutation({
+  return useMutation<T, Error, LoginType>({
     mutationFn: async ({ username, password }: LoginType) => {
-      await axiosInstance.post('/api/auth/login', { username, password })
+      return await axiosInstance.post('/api/auth/login', { username, password })
     },
     onSuccess: async () => {
       navigate('/dashboard')
