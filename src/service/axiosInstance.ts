@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const axiosInstance = axios.create({
-  baseURL: 'http://hejdev1.goqual.com:8080',
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   timeout: 50000,
 })
 
@@ -26,6 +26,7 @@ axiosInstance.interceptors.response.use(
     return response.data
   },
   async (error) => {
+    if (error.response?.status === 401) window.location.href = '/login'
     return Promise.reject(error.response?.data)
   },
 )
