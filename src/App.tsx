@@ -7,6 +7,9 @@ import './scss/style.scss'
 
 // We use those styles to show code examples, you should remove them in your application.
 import './scss/examples.scss'
+import { notificationAtom } from './atoms/notificationAtom'
+import { useAtom } from 'jotai'
+import CustomAlert from './views/notifications/alerts/CustomAlert'
 
 // Containers
 const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))
@@ -20,6 +23,7 @@ const Page500 = React.lazy(() => import('./views/pages/page500/Page500'))
 const App = () => {
   const { isColorModeSet, setColorMode } = useColorModes('coreui-free-react-admin-template-theme')
   const storedTheme = useSelector((state) => state.theme)
+  const [alert, setAlert] = useAtom(notificationAtom)
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.href.split('?')[1])
@@ -35,6 +39,9 @@ const App = () => {
     setColorMode(storedTheme)
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
+  useEffect(() => {
+    console.log(alert)
+  }, [alert])
   return (
     <HashRouter>
       <Suspense
@@ -51,6 +58,7 @@ const App = () => {
           <Route exact path="/500" name="Page 500" element={<Page500 />} />
           <Route path="*" name="Home" element={<DefaultLayout />} />
         </Routes>
+        {/* <CustomAlert {...alert} onClose={() => setAlert({ ...alert, show: false })} /> */}
       </Suspense>
     </HashRouter>
   )

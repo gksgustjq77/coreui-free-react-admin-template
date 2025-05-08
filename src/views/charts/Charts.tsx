@@ -24,7 +24,7 @@ const Charts = () => {
           <CCardBody>
             <CChartBar
               data={{
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                labels: ['wh40batt', 'baromrelin', 'soilad1', 'rainratein'],
                 datasets: [
                   {
                     label: 'GitHub Commits',
